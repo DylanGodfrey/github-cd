@@ -1,0 +1,31 @@
+name: Deploy
+
+    on:
+      push:
+        branches:
+          - main
+
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - uses: akhileshns/heroku-deploy@v3.12.11
+            with:
+              heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+              heroku_app_name: "morning-cliffs-30332"
+              heroku_email: "dylan.godfrey962@gmail.com"
+                    on:
+                      push:
+                        branches:
+                          - main
+                        jobs:
+                          build:
+                            runs-on: ubuntu-latest
+                              steps:
+                                - uses: actions/checkout@v2
+                                - uses: akhileshns/heroku-deploy@v3.12.11
+                                  with:
+                                    heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+                                    heroku_app_name: "morning-cliffs-30332"
+                                    heroku_email: "dylan.godfrey962@gmail.com"
